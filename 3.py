@@ -1,6 +1,12 @@
-def func_table(exp, x, y):
-    res = [[eval(exp.replace('x', str(i)).replace('y', str(j))) for j in range(y + 1)] for i in range(x + 1)]
-    [print(*i, sep='\t') for i in res]
+def template(a, b, c):
+    if a + b > c and a + c > b and b + c > a:
+        print(f'Периметр: {a + b + c}')
+        p = (a + b + c) / 2
+        print(f'Площадь: {(p * (p - a) * (p - b) * (p - c)) ** 0.5}'
+              f'\nРавнобедренный: {"да" if a == b or a == c or b == c else "нет"}'
+              f'\nРавносторонний: {"да" if a == b == c else "нет"}')
+    else:
+        print('None')
 
 
-func_table(exp: 'x ** 2 + y', x: 3, y: 5)
+template(5, 4, 5)
